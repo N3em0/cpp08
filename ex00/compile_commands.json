@@ -1,0 +1,21 @@
+[
+ {
+  "directory": "/home/egache/work/cpp08/ex00",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-MMD",
+   "-MP",
+   "-g3",
+   "-Iincludes",
+   "-c",
+   "-o",
+   ".build/main.o",
+   "src/main.cpp"
+  ],
+  "file": "src/main.cpp"
+ }
+]
