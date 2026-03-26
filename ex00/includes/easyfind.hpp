@@ -4,8 +4,7 @@
 #include <algorithm>
 #include <exception>
 #include <iostream>
-// NE PAS RETOURNER UN INT MAIS BIEN L INDEX DONC L ITERATOR
-template <typename T> int easyFind(T t, int needle)
+template <typename T> typename T::iterator easyFind(T t, int needle)
 {
 
   typename T::iterator it = t.begin();
@@ -15,7 +14,7 @@ template <typename T> int easyFind(T t, int needle)
   val = std::find(it, ite, needle);
   if (val != ite)
   {
-    return (*val);
+    return (val);
   }
   else
   {
