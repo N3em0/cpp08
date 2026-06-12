@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include <exception>
-#include <iostream>
 template <typename T> typename T::iterator easyFind(T t, int needle)
 {
 
