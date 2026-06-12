@@ -40,10 +40,10 @@ unsigned int Span::shortestSpan()
     throw Span::emptyContainerException();
   if (this->vec_.size() == 1)
     throw Span::oneNumberException();
+  std::sort(this->vec_.begin(), this->vec_.end());
   if (std::adjacent_find(this->vec_.begin(), this->vec_.end()) !=
       this->vec_.end())
     return (0);
-  std::sort(this->vec_.begin(), this->vec_.end());
   std::adjacent_difference(this->vec_.begin(), this->vec_.end(), span.begin());
   std::vector<int>::iterator min = std::min_element(span.begin(), span.end());
   return (*min);
@@ -57,8 +57,7 @@ unsigned int Span::longestSpan()
     throw Span::oneNumberException();
   std::sort(this->vec_.begin(), this->vec_.end());
   std::vector<int>::iterator begin = this->vec_.begin();
-  std::vector<int>::iterator end = this->vec_.end();
-  end--;
+  std::vector<int>::reverse_iterator end = this->vec_.rbegin();
   return (*end - *begin);
 }
 
