@@ -24,14 +24,14 @@ void Span::addNumber(int number)
   this->vec_.push_back(number);
 }
 
-static int randomNumber() { return (std::rand()); }
+int randomNumber() { return (std::rand()); }
 
-void Span::addNumbers(int size)
-{
-  if (this->vec_.size() + size > this->N)
-    throw fullContainerException();
-  std::generate_n(std::back_inserter(this->vec_), size, randomNumber);
-}
+// void Span::generateNumbers(int size)
+// {
+//   if (this->vec_.size() + size > this->N)
+//     throw fullContainerException();
+//   std::generate_n(std::back_inserter(this->vec_), size, randomNumber);
+// }
 
 unsigned int Span::shortestSpan()
 {

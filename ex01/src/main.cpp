@@ -29,7 +29,7 @@ int main()
   try
   {
     Span sp = Span(10);
-    sp.addNumbers(10);
+    // sp.addNumbers(10);
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }
@@ -41,7 +41,7 @@ int main()
   try
   {
     Span sp = Span(10000);
-    sp.addNumbers(10000);
+    // sp.addNumbers(10000);
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }
