@@ -24,8 +24,6 @@ void Span::addNumber(int number)
   this->vec_.push_back(number);
 }
 
-int randomNumber() { return (std::rand()); }
-
 // void Span::generateNumbers(int size)
 // {
 //   if (this->vec_.size() + size > this->N)
