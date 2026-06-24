@@ -1,7 +1,15 @@
 #include "Span.hpp"
+#include <algorithm>
 #include <cstdlib>
 #include <exception>
 #include <iostream>
+
+static int randomNumber() { return (std::rand()); }
+
+template <typename C> void generateNumbers(C &container, int size)
+{
+  std::generate_n(std::back_inserter(container), size, randomNumber);
+}
 
 int main()
 {
@@ -17,9 +25,6 @@ int main()
     sp.addNumber(11);
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
-    // sp.addNumbers(5);
-    // std::cout << sp.shortestSpan() << std::endl;
-    // std::cout << sp.longestSpan() << std::endl;
   }
   catch (std::exception &e)
   {
@@ -29,7 +34,9 @@ int main()
   try
   {
     Span sp = Span(10);
-    // sp.addNumbers(10);
+    std::vector<int> v;
+    generateNumbers(v, 10);
+    sp.addNumbers(v.begin(), v.end());
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }
@@ -41,7 +48,9 @@ int main()
   try
   {
     Span sp = Span(10000);
-    // sp.addNumbers(10000);
+    std::vector<int> v;
+    generateNumbers(v, 10000);
+    sp.addNumbers(v.begin(), v.end());
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }

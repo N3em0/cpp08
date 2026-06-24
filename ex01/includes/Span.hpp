@@ -9,7 +9,6 @@ possibilite) AddNumbers() : std::generate (mymuset.begin(), mymuset.end(),
 RandomNumber); AddNumber() : mymuset.insert(number)
 */
 
-#include <algorithm>
 #include <cstddef>
 #include <exception>
 #include <iterator>
@@ -28,21 +27,12 @@ public:
   unsigned int shortestSpan();
   unsigned int longestSpan();
   void addNumber(int number);
-  // void generateNumbers(int size);
-  int randomNumber();
-  /* DO STATIC IN MAIN | PARAMETERS : CONTAINER, CONTAINER SIZE) */
-  // template <typename C> C generateNumbers(int size)
-  // {
-  //   if (this->vec_.size() + size > this->N)
-  //     throw fullContainerException();
-  //   std::generate_n(std::back_inserter(this->vec_), size, randomNumber);
-  // }
   template <typename T> void addNumbers(T begin, T end)
   {
     std::ptrdiff_t dist = std::distance(begin, end);
     if (this->vec_.size() + dist > this->N)
       throw fullContainerException();
-    this->vec_.insert(this->vec_.rbegin(), begin, end);
+    this->vec_.insert(this->vec_.begin(), begin, end);
   }
 
   class emptyContainerException : public std::exception
