@@ -1,6 +1,8 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
+#include <deque>
+
 /*
  empty()
  size()
@@ -15,12 +17,14 @@
 template <typename T> class MutantStack
 {
 private:
+  std::deque<T> stack_;
+
 public:
   MutantStack();
   MutantStack(const MutantStack &src);
   MutantStack &operator=(const MutantStack &rhs);
 
-  void empty(T t);
+  bool empty() const;
   void size();
   void top();
   void push();
@@ -30,5 +34,7 @@ public:
 
   ~MutantStack();
 };
+
+#include "MutantStack.tpp"
 
 #endif
