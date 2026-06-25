@@ -1,11 +1,10 @@
-NAME	:= Span 
+NAME	:= Mutated 
 
 SRC_DIR := src
 BUILD_DIR	:=	.build
 INC_DIR := includes
 
 SRC_FILES		:=	\
-Span.cpp \
 main.cpp
 
 SRC		:=	$(addprefix $(SRC_DIR)/, $(SRC_FILES))
