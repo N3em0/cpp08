@@ -1,13 +1,5 @@
-#pragma once
-
-/*
-Container type :
-  Multiset (ordered container, multiple occurence of same element)
-shortestSpan() :
-  std::adjacent_find -> Return 0 si y'a pas deux valeurs egale (supprime la
-possibilite) AddNumbers() : std::generate (mymuset.begin(), mymuset.end(),
-RandomNumber); AddNumber() : mymuset.insert(number)
-*/
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <cstddef>
 #include <exception>
@@ -67,3 +59,5 @@ private:
   unsigned int N;
   std::vector<int> vec_;
 };
+
+#endif

@@ -24,16 +24,14 @@ void Span::addNumber(int number)
   this->vec_.push_back(number);
 }
 
-// void Span::generateNumbers(int size)
-// {
-//   if (this->vec_.size() + size > this->N)
-//     throw fullContainerException();
-//   std::generate_n(std::back_inserter(this->vec_), size, randomNumber);
-// }
+long long ftSubstract(int a, int b)
+{
+  return (static_cast<long long>(a) - static_cast<long long>(b));
+}
 
 unsigned int Span::shortestSpan()
 {
-  std::vector<int> span(this->vec_.size());
+  std::vector<long long> span(this->vec_.size());
   if (this->vec_.empty())
     throw Span::emptyContainerException();
   if (this->vec_.size() == 1)
@@ -42,8 +40,10 @@ unsigned int Span::shortestSpan()
   if (std::adjacent_find(this->vec_.begin(), this->vec_.end()) !=
       this->vec_.end())
     return (0);
-  std::adjacent_difference(this->vec_.begin(), this->vec_.end(), span.begin());
-  std::vector<int>::iterator min = std::min_element(span.begin(), span.end());
+  std::adjacent_difference(this->vec_.begin(), this->vec_.end(), span.begin(),
+                           ftSubstract);
+  std::vector<long long>::iterator min =
+      std::min_element(span.begin() + 1, span.end());
   return (*min);
 }
 
@@ -56,7 +56,7 @@ unsigned int Span::longestSpan()
   std::sort(this->vec_.begin(), this->vec_.end());
   std::vector<int>::iterator begin = this->vec_.begin();
   std::vector<int>::reverse_iterator end = this->vec_.rbegin();
-  return (*end - *begin);
+  return (static_cast<long long>(*end) - static_cast<long long>(*begin));
 }
 
 Span::fullContainerException::fullContainerException() {}
