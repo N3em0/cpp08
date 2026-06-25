@@ -8,12 +8,15 @@ Span::Span() : N(0) {}
 
 Span::Span(unsigned int number) : N(number) { this->vec_.reserve(this->N); }
 
-Span::Span(Span const &src) : N(src.N) {}
+Span::Span(Span const &src) : N(src.N), vec_(src.vec_) {}
 
 Span &Span::operator=(Span const &rhs)
 {
   if (this != &rhs)
+  {
     this->N = rhs.N;
+    std::copy(rhs.vec_.begin(), rhs.vec_.end(), this->vec_.begin());
+  }
   return (*this);
 }
 
