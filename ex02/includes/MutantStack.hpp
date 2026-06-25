@@ -1,36 +1,25 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
-#include <deque>
+#include <stack>
 
 /*
- empty()
- size()
- top()
- push()
- emplace()
- pop()
- swap()
  ADD iterators() (const non const reverse)
 */
 
-template <typename T> class MutantStack
+template <typename T, typename Container>
+class MutantStack : public std::stack<T, Container>
 {
-private:
-  std::deque<T> stack_;
 
 public:
   MutantStack();
   MutantStack(const MutantStack &src);
   MutantStack &operator=(const MutantStack &rhs);
-
-  bool empty() const;
-  void size();
-  void top();
-  void push();
-  void emplace();
-  void pop();
-  void swap();
+  
+  typedef typename std::stack<T, Container>::container_type::iterator iterator;
+  iterator begin();
+  iterator end();
+  iterator 
 
   ~MutantStack();
 };
