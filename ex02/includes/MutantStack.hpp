@@ -15,11 +15,11 @@ public:
   MutantStack();
   MutantStack(const MutantStack &src);
   MutantStack &operator=(const MutantStack &rhs);
-  
-  typedef typename std::stack<T, Container>::container_type::iterator iterator;
-  iterator begin();
-  iterator end();
-  iterator 
+
+  typename std::stack<T, Container>::iterator iterator;
+  // iterator begin();
+  // iterator end();
+  // iterator
 
   ~MutantStack();
 };
