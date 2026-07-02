@@ -3,7 +3,6 @@
 
 #include <cstddef>
 #include <exception>
-#include <iterator>
 #include <vector>
 
 class Span

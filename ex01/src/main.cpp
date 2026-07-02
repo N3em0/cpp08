@@ -28,14 +28,14 @@ int main()
     sp.addNumber(9);
     sp.addNumber(11);
     std::cout << "ShortestSpan : " << sp.shortestSpan() << std::endl;
-    std::cout << "LongestSpan : " << sp.longestSpan() << std::endl;
+    std::cout << "LongestSpan  : " << sp.longestSpan() << std::endl;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
   }
   std::cout
-      << "\n===================== addNumbers TEST =====================\n\n ";
+      << "\n===================== addNumbers TEST =====================\n\n";
   try
   {
     Span sp = Span(10);
@@ -43,13 +43,13 @@ int main()
     generateNumbers(v, 100);
     sp.addNumbers(v.begin(), v.end());
     std::cout << "ShortestSpan : " << sp.shortestSpan() << std::endl;
-    std::cout << "LongestSpan : " << sp.longestSpan() << std::endl;
+    std::cout << "LongestSpan  : " << sp.longestSpan() << std::endl;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
   }
-  std::cout << "\n===================== 10 000 TEST =====================\n\n ";
+  std::cout << "\n===================== 10 000 TEST =====================\n\n";
   try
   {
     Span sp = Span(10000);
