@@ -20,10 +20,10 @@ public:
   iterator end();
   reverse_iterator rbegin();
   reverse_iterator rend();
-  const_iterator cbegin();
-  const_iterator cend();
-  const_reverse_iterator crbegin();
-  const_reverse_iterator crend();
+  const_iterator cbegin() const;
+  const_iterator cend() const;
+  const_reverse_iterator crbegin() const;
+  const_reverse_iterator crend() const;
   ~MutantStack();
 };
 
