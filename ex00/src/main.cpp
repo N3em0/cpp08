@@ -6,11 +6,6 @@
 #include <list>
 #include <vector>
 
-/*
- Maybe add some tests like :
-  - vector of vector (std::vector<std::vector> vvec;)
-*/
-
 int main()
 {
   try
