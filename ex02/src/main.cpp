@@ -9,6 +9,7 @@ int main()
   {
     std::cout << "========== MutantStack tests" << std::endl;
     MutantStack<int> mstack;
+    MutantStack<int> bstack = MutantStack<int>(mstack);
     mstack.push(4);
     mstack.push(17);
     std::cout << "top  : " << mstack.top() << std::endl;

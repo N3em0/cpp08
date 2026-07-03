@@ -8,19 +8,14 @@ MutantStack<T, Container>::MutantStack()
 {
 }
 template <typename T, typename Container>
-MutantStack<T, Container>::MutantStack(const MutantStack<T, Container> &src)
+MutantStack<T, Container>::MutantStack(const MutantStack<T, Container> &)
 {
-  *this = src;
 }
 template <typename T, typename Container>
 MutantStack<T, Container> &
-MutantStack<T, Container>::operator=(const MutantStack<T, Container> &rhs)
+MutantStack<T, Container>::operator=(const MutantStack<T, Container> &)
 {
-  if (this != &rhs)
-  {
-    *this = rhs;
-  }
-  return (this);
+  return (*this);
 }
 
 template <typename T, typename Container>
