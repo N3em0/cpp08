@@ -49,6 +49,7 @@ int main()
     // *cit += 1;
     // std::cout << *cit << std::endl;
     std::cout << "========== all stack print" << std::endl;
+    ite = mstack.end();
     ++it;
     --it;
     while (it != ite)
